@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ResultFragment">
+
+    <ImageView
+        android:id="@+id/image_heart"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:src="@drawable/pngb"/>
+
+    <TextView
+        android:id="@+id/text_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:layout_below="@id/image_heart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:id="@+id/text_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="♥"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="22sp"
+        android:layout_below="@id/text_you"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/text_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Me"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:layout_below="@id/text_heart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/text_your_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Score"
+        android:textStyle="bold"
+        android:textColor="#E91E63"
+        android:textSize="32sp"
+        android:layout_below="@id/text_me"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/text_your_score"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="182dp"
+        android:src="@drawable/pngwing" />
+
+    <TextView
+        android:id="@+id/text_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:layout_below="@id/text_your_score"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+    <Button
+        android:id="@+id/button_try_again"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:text="Try Again"
+        android:textSize="22sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF0019"
+        android:layout_below="@id/text_score"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp" />
+
+    <ImageView
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/button_try_again"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/baseline_bar_chart_24" />
+
+
+    <ImageView
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/button_try_again"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/png" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_try_again"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="124dp"
+        android:text="Home"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_try_again"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="12dp"
+        android:text="History"
+        android:textSize="18sp" />
+</RelativeLayout>
