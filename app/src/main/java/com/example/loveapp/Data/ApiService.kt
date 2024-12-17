@@ -6,7 +6,6 @@ import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface ApiService {
-
     @GET("getPercentage")
     fun getPercentage(
         @Query("fname") firstName: String,
@@ -14,5 +13,5 @@ interface ApiService {
         @Header("X-RapidAPI-Key") key: String,
         @Header("X-RapidAPI-Host") host: String,
     ): Call<CalculateResult>
-
 }
+

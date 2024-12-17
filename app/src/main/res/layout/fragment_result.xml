@@ -9,7 +9,7 @@
         android:id="@+id/image_heart"
         android:layout_width="match_parent"
         android:layout_height="380dp"
-        android:src="@drawable/pngb"/>
+        android:src="@drawable/pngn" />
 
     <TextView
         android:id="@+id/text_you"
@@ -20,7 +20,7 @@
         android:textSize="22sp"
         android:layout_below="@id/image_heart"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp" />
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/text_heart"
@@ -56,6 +56,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
 
+
     <ImageView
         android:layout_width="220dp"
         android:layout_height="220dp"
@@ -64,51 +65,56 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="-2dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="182dp"
+        android:layout_marginBottom="176dp"
         android:src="@drawable/pngwing" />
 
     <TextView
         android:id="@+id/text_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/text_your_score"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="142dp"
         android:text="100%"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
-        android:layout_below="@id/text_your_score"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button_try_again"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:text="Try Again"
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#FF0019"
         android:layout_below="@id/text_score"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="73dp"
+        android:backgroundTint="#FF0019"
+        android:text="Try Again"
+        android:textColor="@android:color/white"
+        android:textSize="22sp" />
 
     <ImageView
         android:layout_width="44dp"
         android:layout_height="44dp"
         android:layout_below="@+id/button_try_again"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="18dp"
         android:src="@drawable/baseline_bar_chart_24" />
-
 
     <ImageView
         android:layout_width="44dp"
         android:layout_height="44dp"
         android:layout_below="@+id/button_try_again"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="19dp"
         android:src="@drawable/png" />
 
     <TextView
@@ -116,8 +122,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_try_again"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="58dp"
         android:text="Home"
         android:textSize="18sp" />
 
@@ -126,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_try_again"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="12dp"
         android:text="History"
         android:textSize="18sp" />
