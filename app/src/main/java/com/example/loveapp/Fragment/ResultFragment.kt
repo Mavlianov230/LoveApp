@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.loveapp.databinding.FragmentResultBinding
 
-
-
 class ResultFragment : Fragment() {
 
     private var _binding: FragmentResultBinding? = null
@@ -30,7 +28,6 @@ class ResultFragment : Fragment() {
         val secondName = arguments?.getString("secondName") ?: "Me"
         val percentage = arguments?.getString("percentage") ?: "0%"
         val result = arguments?.getString("result") ?: "No result"
-
 
         binding.textYou.text = firstName
         binding.textMe.text = secondName

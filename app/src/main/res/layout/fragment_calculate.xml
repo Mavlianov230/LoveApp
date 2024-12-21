@@ -74,50 +74,51 @@
         android:textColor="@color/black"
         android:textSize="22sp"
         android:layout_marginTop="38dp"/>
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:visibility="gone" /> <!-- ProgressBar скрыт по умолчанию -->
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="166dp"
+            android:layout_marginTop="90dp"
+            android:text="History"
+            android:textSize="18sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="26dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="90dp"
-        android:text="History"
-        android:textSize="18sp" />
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="136dp"
+            android:src="@drawable/baseline_bar_chart_24" />
 
-    <ImageView
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_gravity="end"
-        android:layout_marginEnd="22dp"
-        android:layout_marginTop="146dp"
-        android:src="@drawable/baseline_bar_chart_24" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="170dp"
+            android:layout_marginTop="90dp"
+            android:text="Home"
+            android:textSize="18sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="26dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="170dp"
-        android:layout_marginTop="90dp"
-        android:text="Home"
-        android:textSize="18sp" />
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="136dp"
+            android:src="@drawable/png" />
+    </FrameLayout>
 
-    <ImageView
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="146dp"
-        android:src="@drawable/png" />
-</FrameLayout>
 </LinearLayout>
