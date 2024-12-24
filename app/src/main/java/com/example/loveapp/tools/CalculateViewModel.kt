@@ -1,18 +1,24 @@
-package com.example.loveapp.viewmodel
-
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.loveapp.DAO.LoveResultDao
 import com.example.loveapp.Data.CalculateResult
 import com.example.loveapp.Data.RetrofitInstance
+import com.example.loveapp.ui.LoveResultEntity
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CalculateViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class CalculateViewModel @Inject constructor(
+    application: Application,
+    private val loveResultDao: LoveResultDao
+) : AndroidViewModel(application) {
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
@@ -25,7 +31,7 @@ class CalculateViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun calculateLove(firstName: String, secondName: String) {
         _loading.value = true
-        val apiKey = "02d5869b22msh581e03c603a9a3ep1b140djsnb93850019c3f"
+        val apiKey = "your_api_key"
         val apiHost = "love-calculator.p.rapidapi.com"
 
         val call = RetrofitInstance.api.getPercentage(firstName, secondName, apiKey, apiHost)
@@ -33,7 +39,10 @@ class CalculateViewModel(application: Application) : AndroidViewModel(applicatio
             override fun onResponse(call: Call<CalculateResult>, response: Response<CalculateResult>) {
                 _loading.value = false
                 if (response.isSuccessful) {
-                    _result.value = response.body()
+                    response.body()?.let {
+                        _result.value = it
+                        saveResultToRoom(it)
+                    }
                 } else {
                     _error.value = "Error: ${response.message()}"
                 }
@@ -44,5 +53,17 @@ class CalculateViewModel(application: Application) : AndroidViewModel(applicatio
                 _error.value = "Failed to load data: ${t.message}"
             }
         })
+    }
+
+    private fun saveResultToRoom(result: CalculateResult) {
+        viewModelScope.launch {
+            val loveResultEntity = LoveResultEntity(
+                firstName = result.firstName,
+                secondName = result.secondName,
+                percentage = result.percentage,
+                result = result.result
+            )
+            loveResultDao.insertLoveResult(loveResultEntity)
+        }
     }
 }
