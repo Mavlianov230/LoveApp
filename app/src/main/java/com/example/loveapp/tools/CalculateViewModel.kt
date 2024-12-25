@@ -1,23 +1,25 @@
+package com.example.loveapp.tools
+
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.loveapp.DAO.LoveResultDao
 import com.example.loveapp.Data.CalculateResult
+import com.example.loveapp.Local.HistoryDao
+import com.example.loveapp.Local.historyEnity
 import com.example.loveapp.Data.RetrofitInstance
-import com.example.loveapp.ui.LoveResultEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class CalculateViewModel @Inject constructor(
     application: Application,
-    private val loveResultDao: LoveResultDao
+    private val historyDao: HistoryDao
 ) : AndroidViewModel(application) {
 
     private val _loading = MutableLiveData<Boolean>()
@@ -57,13 +59,13 @@ class CalculateViewModel @Inject constructor(
 
     private fun saveResultToRoom(result: CalculateResult) {
         viewModelScope.launch {
-            val loveResultEntity = LoveResultEntity(
+            val loveResultEntity = historyEnity(
                 firstName = result.firstName,
                 secondName = result.secondName,
-                percentage = result.percentage,
+                percentage = result.percentage.toInt(),
                 result = result.result
             )
-            loveResultDao.insertLoveResult(loveResultEntity)
+            historyDao.insertHistory(loveResultEntity)
         }
     }
 }

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.loveapp.DAO.LoveResultDao
+import com.example.loveapp.Local.HistoryDao
 import com.example.loveapp.databinding.FragmentResultBinding
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ class ResultFragment : Fragment() {
     private val binding get() = _binding!!
 
     @Inject
-    lateinit var loveResultDao: LoveResultDao // Inject Dao
+    lateinit var loveResultDao: HistoryDao// Inject Dao
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

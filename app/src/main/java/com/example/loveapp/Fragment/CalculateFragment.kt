@@ -13,8 +13,10 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.loveapp.R
 import com.example.loveapp.databinding.FragmentCalculateBinding
-import com.example.loveapp.viewmodel.CalculateViewModel
+import com.example.loveapp.tools.CalculateViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CalculateFragment : Fragment() {
 
     private var _binding: FragmentCalculateBinding? = null

@@ -40,6 +40,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -66,8 +70,8 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
-    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0")
-    kapt ("androidx.hilt:hilt-compiler:1.2.0")
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.compiler)
 
 
 }

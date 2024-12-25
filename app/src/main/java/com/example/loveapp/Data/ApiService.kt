@@ -11,7 +11,6 @@ interface ApiService {
         @Query("fname") firstName: String,
         @Query("sname") secondName: String,
         @Header("X-RapidAPI-Key") key: String,
-        @Header("X-RapidAPI-Host") host: String,
+        @Header("X-RapidAPI-Host") host: String
     ): Call<CalculateResult>
 }
-
