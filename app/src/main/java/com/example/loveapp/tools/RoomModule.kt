@@ -1,27 +1,29 @@
 package com.example.loveapp.tools
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.example.loveapp.Local.HistoryDataBase
 import com.example.loveapp.Local.HistoryDao
+import com.example.loveapp.Local.HistoryDataBase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object RoomModule {
 
     @Provides
-    @Singleton
-    fun provideHistoryDatabase(appContext: Context): HistoryDataBase {
-        return Room.databaseBuilder(
-            appContext,
-            HistoryDataBase::class.java,
-            "love_history_database"
-        ).build()
+    fun provideContext(application: Application): Context {
+        return application.applicationContext
+    }
+
+    @Provides
+    fun provideHistoryDatabase(context: Context): HistoryDataBase {
+        return Room.databaseBuilder(context, HistoryDataBase::class.java, "history_database")
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides
